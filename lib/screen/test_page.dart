@@ -125,127 +125,172 @@ class _TestPageState extends State<TestPage> {
             : SolidBottomSheet(
                 autoSwiped: true,
                 showOnAppear: true,
-                maxHeight: MediaQuery.of(context).size.height / 3,
+                maxHeight: MediaQuery.of(context).size.height / 3.45,
                 controller: _controller,
                 draggableBody: true,
-                body: Container(
-                    padding: EdgeInsets.only(top: 16),
-                    decoration: new BoxDecoration(
-                      border: Border(),
-                      gradient: new LinearGradient(
-                          colors: [
-                            const Color(0xFFDB6AF4),
-                            const Color(0xFFAC4BF1),
-                          ],
-                          begin: const FractionalOffset(0.0, 0.0),
-                          end: const FractionalOffset(1.0, 0.0),
-                          stops: [0.0, 1.0],
-                          tileMode: TileMode.clamp),
-                    ),
-                    child: GridView.count(
-                        crossAxisCount: 4,
-                        childAspectRatio: (itemHeight / itemWidth),
-                        controller: ScrollController(keepScrollOffset: false),
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
-                        children: [
-                          GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  setSum(10);
-                                  print(_myList);
-                                });
-                              },
-                              child: KeyKeyboard(symbol: Keys.x)),
-                          GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  setSum(int.parse((Keys.ten.toString())));
-                                  print(_myList);
-                                });
-                              },
-                              child: KeyKeyboard(symbol: Keys.ten)),
-                          GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  setSum(int.parse((Keys.nine.toString())));
-                                  print(_myList);
-                                });
-                              },
-                              child: KeyKeyboard(symbol: Keys.nine)),
-                          GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  setSum(int.parse((Keys.eight.toString())));
-                                  print(_myList);
-                                });
-                              },
-                              child: KeyKeyboard(symbol: Keys.eight)),
-                          GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  setSum(int.parse((Keys.seven.toString())));
-                                  print(_myList);
-                                });
-                              },
-                              child: KeyKeyboard(symbol: Keys.seven)),
-                          GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  setSum(int.parse((Keys.six.toString())));
-                                  print(_myList);
-                                });
-                              },
-                              child: KeyKeyboard(symbol: Keys.six)),
-                          GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  setSum(int.parse((Keys.five.toString())));
-                                  print(_myList);
-                                });
-                              },
-                              child: KeyKeyboard(symbol: Keys.five)),
-                          GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  setSum(int.parse((Keys.four.toString())));
-                                  print(_myList);
-                                });
-                              },
-                              child: KeyKeyboard(symbol: Keys.four)),
-                          GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  setSum(int.parse((Keys.three.toString())));
-                                  print(_myList);
-                                });
-                              },
-                              child: KeyKeyboard(symbol: Keys.three)),
-                          GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  setSum(int.parse((Keys.two.toString())));
-                                  print(_myList);
-                                });
-                              },
-                              child: KeyKeyboard(symbol: Keys.two)),
-                          GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  setSum(int.parse((Keys.one.toString())));
-                                  print(_myList);
-                                });
-                              },
-                              child: KeyKeyboard(symbol: Keys.one)),
-                          GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  setSum(0);
-                                  print(_myList);
-                                });
-                              },
-                              child: KeyKeyboard(symbol: Keys.m)),
-                        ])),
+                body: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    Container(
+                        padding: EdgeInsets.only(top: 16),
+                        decoration: new BoxDecoration(
+                          border: Border(),
+                          gradient: new LinearGradient(
+                              colors: [
+                                const Color(0xFFDB6AF4),
+                                const Color(0xFFAC4BF1),
+                              ],
+                              begin: const FractionalOffset(0.0, 0.0),
+                              end: const FractionalOffset(1.0, 0.0),
+                              stops: [0.0, 1.0],
+                              tileMode: TileMode.clamp),
+                        ),
+                        child: GridView.count(
+                            crossAxisCount: 4,
+                            childAspectRatio: (itemHeight / itemWidth),
+                            controller:
+                                ScrollController(keepScrollOffset: false),
+                            shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            children: [
+                              GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      setSum(10);
+                                      if (_myList.length > widget.jmlPanah) {
+                                        _myList.removeLast();
+                                      }
+                                      print(_myList);
+                                    });
+                                  },
+                                  child: KeyKeyboard(symbol: Keys.x)),
+                              GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      setSum(int.parse((Keys.ten.toString())));
+                                      if (_myList.length > widget.jmlPanah) {
+                                        _myList.removeLast();
+                                      }
+                                      print(_myList);
+                                    });
+                                  },
+                                  child: KeyKeyboard(symbol: Keys.ten)),
+                              GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      setSum(int.parse((Keys.nine.toString())));
+                                      if (_myList.length > widget.jmlPanah) {
+                                        _myList.removeLast();
+                                      }
+                                      print(_myList);
+                                    });
+                                  },
+                                  child: KeyKeyboard(symbol: Keys.nine)),
+                              GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      setSum(
+                                          int.parse((Keys.eight.toString())));
+                                      if (_myList.length > widget.jmlPanah) {
+                                        _myList.removeLast();
+                                      }
+                                      print(_myList);
+                                    });
+                                  },
+                                  child: KeyKeyboard(symbol: Keys.eight)),
+                              GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      setSum(
+                                          int.parse((Keys.seven.toString())));
+                                      if (_myList.length > widget.jmlPanah) {
+                                        _myList.removeLast();
+                                      }
+                                      print(_myList);
+                                    });
+                                  },
+                                  child: KeyKeyboard(symbol: Keys.seven)),
+                              GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      setSum(int.parse((Keys.six.toString())));
+                                      if (_myList.length > widget.jmlPanah) {
+                                        _myList.removeLast();
+                                      }
+                                      print(_myList);
+                                    });
+                                  },
+                                  child: KeyKeyboard(symbol: Keys.six)),
+                              GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      setSum(int.parse((Keys.five.toString())));
+                                      if (_myList.length > widget.jmlPanah) {
+                                        _myList.removeLast();
+                                      }
+                                      print(_myList);
+                                    });
+                                  },
+                                  child: KeyKeyboard(symbol: Keys.five)),
+                              GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      setSum(int.parse((Keys.four.toString())));
+                                      if (_myList.length > widget.jmlPanah) {
+                                        _myList.removeLast();
+                                      }
+                                      print(_myList);
+                                    });
+                                  },
+                                  child: KeyKeyboard(symbol: Keys.four)),
+                              GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      setSum(
+                                          int.parse((Keys.three.toString())));
+                                      if (_myList.length > widget.jmlPanah) {
+                                        _myList.removeLast();
+                                      }
+                                      print(_myList);
+                                    });
+                                  },
+                                  child: KeyKeyboard(symbol: Keys.three)),
+                              GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      setSum(int.parse((Keys.two.toString())));
+                                      if (_myList.length > widget.jmlPanah) {
+                                        _myList.removeLast();
+                                      }
+                                      print(_myList);
+                                    });
+                                  },
+                                  child: KeyKeyboard(symbol: Keys.two)),
+                              GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      setSum(int.parse((Keys.one.toString())));
+                                      if (_myList.length > widget.jmlPanah) {
+                                        _myList.removeLast();
+                                      }
+                                      print(_myList);
+                                    });
+                                  },
+                                  child: KeyKeyboard(symbol: Keys.one)),
+                              GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      setSum(0);
+                                      if (_myList.length > widget.jmlPanah) {
+                                        _myList.removeLast();
+                                      }
+                                      print(_myList);
+                                    });
+                                  },
+                                  child: KeyKeyboard(symbol: Keys.m)),
+                            ])),
+                  ],
+                ),
               ),
         body: SafeArea(
           top: false,
@@ -322,7 +367,7 @@ class _TestPageState extends State<TestPage> {
               Center(
                 child: Container(
                   child: Text(
-                    _result == "" ? '0' : _result,
+                    (_result == "" || _myList.isEmpty) ? '0' : _result,
                     style: TextStyle(fontSize: 40.0),
                   ),
                 ),
@@ -350,7 +395,31 @@ class _TestPageState extends State<TestPage> {
                 },
                 selectedColor: Colors.yellow[600],
               ),
-              SizedBox(height: 20.0),
+              SizedBox(
+                height: 16,
+              ),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _myList.removeLast();
+                  });
+                },
+                child: Container(
+                  margin: EdgeInsets.symmetric(
+                    horizontal: 8.0,
+                  ),
+                  decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.circular(20)),
+                  height: 50,
+                  width: 50,
+                  child: Icon(
+                    Icons.backspace,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.0),
               (_myList.length != widget.jmlPanah || _seri == null)
                   ? SizedBox.shrink()
                   : ButtonTheme(

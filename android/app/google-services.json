@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "441943695421",
+    "firebase_url": "https://jaski-presensi.firebaseio.com",
+    "project_id": "jaski-presensi",
+    "storage_bucket": "jaski-presensi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441943695421:android:9f7bf4900120e5e4cf0a54",
+        "android_client_info": {
+          "package_name": "id.jaski.presensi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "441943695421-8g0st0nvfbh6ulie80hbl2sq5sdhuf78.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuHNGr3UkWrFhd4djVRJj1YAsoaQUYNKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "441943695421-8g0st0nvfbh6ulie80hbl2sq5sdhuf78.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

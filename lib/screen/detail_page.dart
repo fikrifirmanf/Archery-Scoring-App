@@ -8,17 +8,17 @@ import 'package:scoring_panahan/screen/test_page.dart';
 import 'package:scoring_panahan/widget/message_widget.dart';
 
 class DetailPage extends StatelessWidget {
-  int sesi;
-  int jarak;
-  DetailPage({this.sesi, this.jarak});
+  // int sesi;
+  // int jarak;
+  String uuidRules, nama;
+
+  DetailPage({this.uuidRules, this.nama});
   final HomeRepository homeRepository = HomeRepository();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: (jarak != null)
-            ? Text('Sesi $sesi Jarak $jarak')
-            : Text('Sesi $sesi'),
+        title: (nama != null) ? Text(nama) : Text('Sesi'),
         flexibleSpace: Container(
           decoration: new BoxDecoration(
             gradient: new LinearGradient(
@@ -92,7 +92,7 @@ class DetailPage extends StatelessWidget {
     return ListView.builder(
         itemCount: pm.peserta.length,
         itemBuilder: (context, i) {
-          return (p[i].sesi == sesi)
+          return (p[i].uuidRules == uuidRules)
               ? Stack(children: [
                   GestureDetector(
                     onTap: () => Navigator.push(

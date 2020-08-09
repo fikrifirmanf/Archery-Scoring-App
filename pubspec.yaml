@@ -36,7 +36,6 @@ dev_dependencies:
   flutter_secure_storage: ^3.3.1+1
   bloc: ^4.0.0
   alice: ^0.0.33
-  supercharged: ^1.8.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

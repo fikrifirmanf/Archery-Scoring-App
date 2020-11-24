@@ -19,12 +19,13 @@ class SkorBloc extends Bloc<SkorEvent, SkorState> {
       yield Loading();
       try {
         var insertSkor = await skorRepo.insertSkor(
-          event.sesi,
-          event.seri,
-          event.uuidRules,
-          event.uuidPeserta,
-          event.totalSeri,
-        );
+            event.sesi,
+            event.seri,
+            event.uuidRules,
+            event.uuidPeserta,
+            event.totalSeri,
+            event.totalX,
+            event.totalTen);
         if (insertSkor == true) {
           yield Success();
         } else if (insertSkor == 'gagal') {

@@ -60,7 +60,7 @@ class DetailPage extends StatelessWidget {
                         height: 80,
                       ),
                       title: 'Terjadi kesalahan',
-                      subtitle: 'ketika mengambil data',
+                      subtitle: 'ketika mengambil data, silahkan Login Ulang!',
                     );
                   } else if (state is HomeFetchingState) {
                     return Scaffold(

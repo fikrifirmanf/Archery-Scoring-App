@@ -12,16 +12,20 @@ class InsertSkorEvent extends SkorEvent {
   final String uuidRules;
   final String uuidPeserta;
   final int totalSeri;
+  final int totalX;
+  final int totalTen;
 
-  const InsertSkorEvent({
-    this.sesi,
-    this.seri,
-    this.uuidRules,
-    this.uuidPeserta,
-    this.totalSeri,
-  });
+  const InsertSkorEvent(
+      {this.sesi,
+      this.seri,
+      this.uuidRules,
+      this.uuidPeserta,
+      this.totalSeri,
+      this.totalX,
+      this.totalTen});
   @override
-  List<Object> get props => [sesi, seri, uuidRules, uuidPeserta, totalSeri];
+  List<Object> get props =>
+      [sesi, seri, uuidRules, uuidPeserta, totalSeri, totalX];
 
   @override
   String toString() => 'InsertSkorEvent ';

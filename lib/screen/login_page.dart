@@ -137,8 +137,7 @@ class _LoginFormState extends State<LoginForm> {
                   horizontal: 32.0,
                   vertical: 48.0,
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                child: ListView(
                   children: <Widget>[
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,

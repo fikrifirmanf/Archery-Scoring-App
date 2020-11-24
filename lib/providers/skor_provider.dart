@@ -8,15 +8,14 @@ class SkorProv {
   String baseUrl = Api.MAIN_URL;
   final LoginRepository loginRepository = LoginRepository();
 
-  Future<dynamic> insertSkor(
-    String sesi,
-    String seri,
-    String uuidRules,
-    String uuidPeserta,
-    int totalSeri,
-  ) async {
+  Future<dynamic> insertSkor(String sesi, String seri, String uuidRules,
+      String uuidPeserta, int totalSeri, int totalX, int totalTen) async {
     final token = loginRepository.getToken();
-    Map<String, dynamic> body = {'seri': totalSeri};
+    Map<String, dynamic> body = {
+      'seri': totalSeri,
+      'total_x': totalX,
+      'total_10': totalTen
+    };
     final response = await http.put(
         baseUrl +
             'skor/' +

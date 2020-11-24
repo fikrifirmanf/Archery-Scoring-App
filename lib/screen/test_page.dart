@@ -24,10 +24,16 @@ class TestPage extends StatefulWidget {
 
 class _TestPageState extends State<TestPage> {
   List<int> _myList = List();
+  List<int> _myListX = List();
+  List<int> _myListTen = List();
   TextEditingController _myController = TextEditingController();
   SolidController _controller = SolidController();
   String _result = "";
+  String _resultX = "";
+  String _resultTen = "";
   String _inputList = "";
+  String _inputListX = "";
+  String _inputListTen = "";
   List<int> _hsl = List();
   String _seri;
 
@@ -44,10 +50,38 @@ class _TestPageState extends State<TestPage> {
     _result = '$sum';
   }
 
+  setSumX(int val) {
+    int sum = 0;
+    _myListX.add(val);
+    for (int i = 0; i < _myListX.length; i++) {
+      sum += _myListX[i];
+      if (i == 0)
+        _inputListX = "${_myListX[i]}";
+      else
+        _inputListX = _inputListX + "${_myListX[i]}";
+    }
+    _resultX = '$sum';
+  }
+
+  setSumTen(int val) {
+    int sum = 0;
+    _myListTen.add(val);
+    for (int i = 0; i < _myListTen.length; i++) {
+      sum += _myListTen[i];
+      if (i == 0)
+        _inputListTen = "${_myListTen[i]}";
+      else
+        _inputListTen = _inputListTen + "${_myListTen[i]}";
+    }
+    _resultTen = '$sum';
+  }
+
   @override
   void initState() {
     super.initState();
     _myList.clear();
+    _myListX.clear();
+    _myListTen.clear();
   }
 
   final focus = FocusNode();
@@ -157,6 +191,8 @@ class _TestPageState extends State<TestPage> {
                                   onTap: () {
                                     setState(() {
                                       setSum(10);
+                                      setSumX(1);
+                                      setSumTen(0);
                                       if (_myList.length > widget.jmlPanah) {
                                         _myList.removeLast();
                                       }
@@ -168,6 +204,8 @@ class _TestPageState extends State<TestPage> {
                                   onTap: () {
                                     setState(() {
                                       setSum(int.parse((Keys.ten.toString())));
+                                      setSumX(0);
+                                      setSumTen(1);
                                       if (_myList.length > widget.jmlPanah) {
                                         _myList.removeLast();
                                       }
@@ -179,6 +217,8 @@ class _TestPageState extends State<TestPage> {
                                   onTap: () {
                                     setState(() {
                                       setSum(int.parse((Keys.nine.toString())));
+                                      setSumX(0);
+                                      setSumTen(0);
                                       if (_myList.length > widget.jmlPanah) {
                                         _myList.removeLast();
                                       }
@@ -191,6 +231,8 @@ class _TestPageState extends State<TestPage> {
                                     setState(() {
                                       setSum(
                                           int.parse((Keys.eight.toString())));
+                                      setSumX(0);
+                                      setSumTen(0);
                                       if (_myList.length > widget.jmlPanah) {
                                         _myList.removeLast();
                                       }
@@ -203,6 +245,8 @@ class _TestPageState extends State<TestPage> {
                                     setState(() {
                                       setSum(
                                           int.parse((Keys.seven.toString())));
+                                      setSumX(0);
+                                      setSumTen(0);
                                       if (_myList.length > widget.jmlPanah) {
                                         _myList.removeLast();
                                       }
@@ -214,6 +258,8 @@ class _TestPageState extends State<TestPage> {
                                   onTap: () {
                                     setState(() {
                                       setSum(int.parse((Keys.six.toString())));
+                                      setSumX(0);
+                                      setSumTen(0);
                                       if (_myList.length > widget.jmlPanah) {
                                         _myList.removeLast();
                                       }
@@ -225,6 +271,8 @@ class _TestPageState extends State<TestPage> {
                                   onTap: () {
                                     setState(() {
                                       setSum(int.parse((Keys.five.toString())));
+                                      setSumX(0);
+                                      setSumTen(0);
                                       if (_myList.length > widget.jmlPanah) {
                                         _myList.removeLast();
                                       }
@@ -236,6 +284,8 @@ class _TestPageState extends State<TestPage> {
                                   onTap: () {
                                     setState(() {
                                       setSum(int.parse((Keys.four.toString())));
+                                      setSumX(0);
+                                      setSumTen(0);
                                       if (_myList.length > widget.jmlPanah) {
                                         _myList.removeLast();
                                       }
@@ -248,6 +298,8 @@ class _TestPageState extends State<TestPage> {
                                     setState(() {
                                       setSum(
                                           int.parse((Keys.three.toString())));
+                                      setSumX(0);
+                                      setSumTen(0);
                                       if (_myList.length > widget.jmlPanah) {
                                         _myList.removeLast();
                                       }
@@ -259,6 +311,8 @@ class _TestPageState extends State<TestPage> {
                                   onTap: () {
                                     setState(() {
                                       setSum(int.parse((Keys.two.toString())));
+                                      setSumX(0);
+                                      setSumTen(0);
                                       if (_myList.length > widget.jmlPanah) {
                                         _myList.removeLast();
                                       }
@@ -270,6 +324,8 @@ class _TestPageState extends State<TestPage> {
                                   onTap: () {
                                     setState(() {
                                       setSum(int.parse((Keys.one.toString())));
+                                      setSumX(0);
+                                      setSumTen(0);
                                       if (_myList.length > widget.jmlPanah) {
                                         _myList.removeLast();
                                       }
@@ -281,6 +337,8 @@ class _TestPageState extends State<TestPage> {
                                   onTap: () {
                                     setState(() {
                                       setSum(0);
+                                      setSumX(0);
+                                      setSumTen(0);
                                       if (_myList.length > widget.jmlPanah) {
                                         _myList.removeLast();
                                       }
@@ -402,6 +460,7 @@ class _TestPageState extends State<TestPage> {
                 onTap: () {
                   setState(() {
                     _myList.removeLast();
+                    _myListX.removeLast();
                   });
                 },
                 child: Container(
@@ -434,15 +493,17 @@ class _TestPageState extends State<TestPage> {
                           print('Sesi  : ' + widget.sesi);
                           print('Uuid Pes  : ' + widget.uuidPeserta);
                           print('Uuid Rules  : ' + widget.uuidRules);
+                          print('UuTotal X  : ' + _resultX);
 
-                          BlocProvider.of<SkorBloc>(context)
-                              .add(InsertSkorEvent(
-                            sesi: widget.sesi,
-                            seri: _seri,
-                            uuidRules: widget.uuidRules,
-                            uuidPeserta: widget.uuidPeserta,
-                            totalSeri: int.parse(_result),
-                          ));
+                          BlocProvider.of<SkorBloc>(context).add(
+                              InsertSkorEvent(
+                                  sesi: widget.sesi,
+                                  seri: _seri,
+                                  uuidRules: widget.uuidRules,
+                                  uuidPeserta: widget.uuidPeserta,
+                                  totalSeri: int.parse(_result),
+                                  totalX: int.parse(_resultX),
+                                  totalTen: int.parse(_resultTen)));
                         },
                         child: Text(
                           'Kirim seri ${_seri}',

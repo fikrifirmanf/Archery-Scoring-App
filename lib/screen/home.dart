@@ -128,7 +128,7 @@ class Home extends StatelessWidget {
                   ),
                   child: Text(
                     'Username : ' + pan.username,
-                    style: TextStyle(color: Colors.grey, fontSize: 18.0),
+                    style: TextStyle(color: Colors.grey[800], fontSize: 18.0),
                   )),
               Divider(),
               ListView.builder(
@@ -146,6 +146,9 @@ class Home extends StatelessWidget {
                                       // kategori: kategoriDetail[i],
                                       uuidRules: uuidRulesDetail[i]))),
                           child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 16.0,
+                              ),
                               margin: EdgeInsets.symmetric(
                                 vertical: 8.0,
                                 horizontal: 16.0,
